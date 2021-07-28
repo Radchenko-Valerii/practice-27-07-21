@@ -78,7 +78,7 @@ const inStockLang = phones.map(function (obj){
 })
 
 inStockLang.forEach(function (phone){
-  console.log(`${phone.manufacturer} ${phone.model} со стоимостью ${phone.price} сейчас ${phone.inStock}`)
+  console.log(`${phone.manufacturer} ${phone.model} со стоимостью ${phone.price} грн сейчас ${phone.inStock}`)
 })
 
 //-------------------------------------
@@ -92,3 +92,39 @@ const sortFromLowerPrice = phones.sort(function (a,b){
   }
   return 0;
 });
+
+//-----------------------------------
+
+const brands = ['Apple', 'Panasonic', 'Huawei', 'Salami', 'Google', 'Samsung', 'Djigit', 'Hong Wei Lang Dang Sun'];
+const color = ['Black', 'White', 'Red', 'Silver', 'DogerBlue', 'Purple', 'Gold', 'Orange']
+
+
+const randomBrand = function (){
+  let i = getRandomInt(0, 8);
+  return brands[i];
+}
+
+const randomColor = function (){
+  let i = getRandomInt(0, 8);
+  return color[i];
+}
+
+function getPhonesRandom(amount) {
+  const newPhones1 = [];
+
+  for(let i = 0; i < amount; i++) {
+    newPhones1.push(new Phone (
+      `Model ${i}`, 
+      randomBrand(), 
+      getRandomInt(5000, 50000),
+      randomColor(),
+      Math.random() >= 0.5
+    ))
+  }
+
+  return newPhones1;
+}
+
+const phonesRandom = getPhonesRandom(15);
+
+console.table(phonesRandom);
