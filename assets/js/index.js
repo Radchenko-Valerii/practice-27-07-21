@@ -50,7 +50,7 @@ console.log(j);
 //2-------------------------------------
 
 const inStockPhones = phones.filter(function (phone){
-  return phone.inStock === true;
+  return phone.inStock;
 });
 
 //3-------------------------------------
@@ -97,6 +97,7 @@ const sortFromLowerPrice = phones.sort(function (a,b){
 
 const brands = ['Apple', 'Panasonic', 'Huawei', 'Salami', 'Google', 'Samsung', 'Djigit', 'Hong Wei Lang Dang Sun'];
 const color = ['Black', 'White', 'Red', 'Silver', 'DogerBlue', 'Purple', 'Gold', 'Orange']
+const model = ['one', 'A', 'X', 'Venum', 'GamePhone', 'CameraMan', 'Lol', 'Mark']
 
 
 const randomBrand = function (){
@@ -109,12 +110,17 @@ const randomColor = function (){
   return color[i];
 }
 
+const randomModel = function (){
+  let i = getRandomInt(0, 8);
+  return model[i];
+}
+
 function getPhonesRandom(amount) {
   const newPhones1 = [];
 
   for(let i = 0; i < amount; i++) {
     newPhones1.push(new Phone (
-      `Model ${i}`, 
+      `${randomModel()} ${getRandomInt(1, 11)}`, 
       randomBrand(), 
       getRandomInt(5000, 50000),
       randomColor(),
