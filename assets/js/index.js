@@ -97,7 +97,7 @@ const sortFromLowerPrice = phones.sort(function (a,b){
 
 const brands = ['Apple', 'Panasonic', 'Huawei', 'Salami', 'Google', 'Samsung', 'Djigit', 'Hong Wei Lang Dang Sun'];
 const color = ['Black', 'White', 'Red', 'Silver', 'DogerBlue', 'Purple', 'Gold', 'Orange']
-const model = ['one', 'A', 'X', 'Venum', 'GamePhone', 'CameraMan', 'Lol', 'Mark']
+const model = ['one', 'A', 'X', 'Venum', 'GamePhone', 'CameraMan', 'Symbian', 'Model']
 
 
 const randomBrand = function (){
