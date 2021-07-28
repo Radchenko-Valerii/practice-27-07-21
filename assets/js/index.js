@@ -65,3 +65,20 @@ const inStockMapWork = inStockPhones.map(function (phone){
 const saleInStock = inStockMapWork.filter(function (phone){
   return phone !== undefined;
 })
+
+
+// advanced ----------------------------
+
+const inStockLang = phones.map(function (obj){
+  if(obj.inStock === true){
+    obj.inStock = 'в наличии';
+  } else { obj.inStock = 'нет наличии';
+  }
+  return obj;
+})
+
+inStockLang.forEach(function (phone){
+  console.log(`${phone.manufacturer} ${phone.model} со стоимостью ${phone.price} сейчас ${phone.inStock}`)
+})
+
+//-------------------------------------
