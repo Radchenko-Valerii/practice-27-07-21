@@ -82,3 +82,13 @@ inStockLang.forEach(function (phone){
 })
 
 //-------------------------------------
+
+const sortFromLowerPrice = phones.sort(function (a,b){
+  if (a.price > b.price) {
+    return 1;
+  }
+  if (a.price < b.price) {
+    return -1;
+  }
+  return 0;
+});
